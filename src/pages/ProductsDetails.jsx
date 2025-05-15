@@ -81,7 +81,7 @@ const ProductsDetails = () => {
                     </div>
                 </div>
             </div>
-            // Related products
+          
             <div className='flex flex-col items-center mt-20'>
                 <div className='flex flex-col items-end w-max'>
                     <p className='text-2xl font-medium uppercase'>Related Products</p>

@@ -55,7 +55,7 @@ export const AppContextProvider = ({ children }) => {
         }
         return totalCount
     }
-    const getCardAmount = async () => {
+    const getCardAmount =  () => {
         let totalAmount = 0
         for (const items in cartItems) {
             let itemInfos = products.find((product) => product._id === items)
