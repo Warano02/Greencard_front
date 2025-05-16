@@ -12,11 +12,13 @@ import ProductsDetails from './pages/ProductsDetails'
 import Card from './pages/Card'
 import AddAddress from './pages/AddAddress'
 import MyOrders from './pages/MyOrders'
+import SellerLogin from './components/seller/SellerLogin'
+import SellerLayout from './pages/seller/SellerLayout'
 function App() {
   const isSellerPath = useLocation().pathname.includes("seller")
-  const { showUserLogin } = useAppContext()
+  const { showUserLogin, isSeller } = useAppContext()
   return (
-    <div>
+    <div className='text-default min-h-screen text-gray-700 bg-white'>
       {isSellerPath ? null : <NavBar />}
       {showUserLogin ? <Login /> : null}
       <Toaster />
@@ -29,6 +31,9 @@ function App() {
           <Route path="/add-address" element={<AddAddress />} />
           <Route path="/products/:category" element={<ProductCategory />} />
           <Route path="/products/:category/:id" element={<ProductsDetails />} />
+          <Route path='/seller' element={isSeller ? <SellerLayout /> : <SellerLogin />}>
+
+          </Route>
         </Routes>
       </div>
       {!isSellerPath && <Footer />}
